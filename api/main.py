@@ -25,6 +25,13 @@ app.add_middleware(
 app.include_router(words.router, prefix="/api", tags=["words"])
 app.include_router(practice.router, prefix="/api", tags=["practice"])
 
+app.include_router(
+    words.router,
+    prefix = '/api',
+    tags = ["words"]
+)
+
+
 @app.get("/")
 def read_root():
     return {
